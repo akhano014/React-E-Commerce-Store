@@ -22,7 +22,7 @@ This implementation plan breaks down the React E-Commerce Store into incremental
   - Test navigation by manually changing URLs
   - _Requirements: 6.5_
 
-- [ ] 3. Build Loader Component
+- [x] 3. Build Loader Component
   - Create `src/components/Loader/Loader.jsx` with a spinning animation
   - Use Tailwind CSS classes for centering and animation (animate-spin)
   - Export component for reuse across pages
