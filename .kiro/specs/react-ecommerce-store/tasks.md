@@ -210,7 +210,7 @@ This implementation plan breaks down the React E-Commerce Store into incremental
     - **Property 14: Cart Count Badge Display**
     - **Validates: Requirements 6.3**
 
-- [ ] 17. Implement 404 Not Found Page
+- [x] 17. Implement 404 Not Found Page
   - Create NotFound.jsx with centered content
   - Display "404 - Page Not Found" heading
   - Add descriptive message
