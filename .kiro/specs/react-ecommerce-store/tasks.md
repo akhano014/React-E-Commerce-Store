@@ -191,8 +191,8 @@ This implementation plan breaks down the React E-Commerce Store into incremental
     - Test localStorage unavailable (privacy mode)
     - _Requirements: 5.4_
 
-- [ ] 16. Create Navbar Component
-  - [ ] 16.1 Build Navbar with navigation and cart badge
+- [x] 16. Create Navbar Component
+  - [x] 16.1 Build Navbar with navigation and cart badge
     - Create `src/components/Navbar/Navbar.jsx`
     - Import useContext and CartContext to access getCartItemCount
     - Add Link components for Home ("/") and Cart ("/cart")
@@ -201,7 +201,7 @@ This implementation plan breaks down the React E-Commerce Store into incremental
     - Add responsive mobile menu (hamburger icon that toggles menu visibility on small screens)
     - _Requirements: 6.1, 6.2, 6.3, 6.6_
   
-  - [ ] 16.2 Add Navbar to App.jsx
+  - [x] 16.2 Add Navbar to App.jsx
     - Import Navbar component
     - Place Navbar above Routes so it appears on all pages
     - _Requirements: 6.1_
