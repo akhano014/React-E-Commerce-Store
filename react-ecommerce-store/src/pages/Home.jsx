@@ -1,56 +1,44 @@
 import { useState, useEffect } from 'react';
 import Loader from '../components/Loader/Loader';
+import ProductCard from '../components/ProductCard/ProductCard';
 
 function Home() {
-  // State management - the component's memory
-  const [products, setProducts] = useState([]);      // Stores fetched products
-  const [loading, setLoading] = useState(true);      // Tracks loading state
-  const [error, setError] = useState(null);          // Stores error message if any
+  // State management
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  // useEffect runs after component mounts (appears on screen)
+  // Fetch products on component mount
   useEffect(() => {
-    // Define async function to fetch products
     async function fetchProducts() {
       try {
-        // Step 1: Set loading to true (show spinner)
         setLoading(true);
-        
-        // Step 2: Fetch data from API
         const response = await fetch('https://fakestoreapi.com/products');
         
-        // Step 3: Check if request was successful
         if (!response.ok) {
           throw new Error('Failed to fetch products');
         }
         
-        // Step 4: Parse JSON data
         const data = await response.json();
-        
-        // Step 5: Update state with products
         setProducts(data);
-        setError(null); // Clear any previous errors
+        setError(null);
         
       } catch (err) {
-        // If anything goes wrong, store the error message
         setError(err.message);
       } finally {
-        // Always set loading to false when done (success or error)
         setLoading(false);
       }
     }
 
-    // Call the function
     fetchProducts();
-  }, []); // Empty dependency array = run only once on mount
+  }, []);
 
-  // Conditional rendering based on state
-  
-  // If loading, show spinner
+  // Loading state
   if (loading) {
     return <Loader />;
   }
 
-  // If error, show error message
+  // Error state
   if (error) {
     return (
       <div className="container mx-auto px-4 py-8">
@@ -68,16 +56,18 @@ function Home() {
     );
   }
 
-  // If successful, show products (for now, just a list)
+  // Success state - Display products in grid
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-gray-800 mb-6">Our Products</h1>
-      <div className="space-y-4">
+      {/* Page Header */}
+      <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center">
+        Our Products
+      </h1>
+
+      {/* Products Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {products.map(product => (
-          <div key={product.id} className="border p-4 rounded">
-            <h3 className="font-semibold">{product.title}</h3>
-            <p className="text-gray-600">${product.price}</p>
-          </div>
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
     </div>

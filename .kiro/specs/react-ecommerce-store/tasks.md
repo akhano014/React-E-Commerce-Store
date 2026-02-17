@@ -44,7 +44,7 @@ This implementation plan breaks down the React E-Commerce Store into incremental
     - **Property 2: Error Handling for Failed Requests**
     - **Validates: Requirements 2.6, 3.7, 8.2, 8.5**
 
-- [ ] 5. Create ProductCard Component
+- [x] 5. Create ProductCard Component
   - Create `src/components/ProductCard/ProductCard.jsx` that accepts a product prop
   - Display product image, title, price, and category using Tailwind CSS for styling
   - Use fixed aspect ratio for images and truncate long titles with CSS
@@ -53,7 +53,7 @@ This implementation plan breaks down the React E-Commerce Store into incremental
   - Use useNavigate hook to navigate to `/product/${product.id}` on click
   - _Requirements: 2.4, 2.5_
 
-- [ ] 6. Display Products in Grid Layout on Home Page
+- [x] 6. Display Products in Grid Layout on Home Page
   - Import ProductCard component into Home.jsx
   - Conditionally render: Loader when loading, error message when error exists, or product grid when data loaded
   - Map through products array and render ProductCard for each product
