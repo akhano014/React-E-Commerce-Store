@@ -156,8 +156,8 @@ This implementation plan breaks down the React E-Commerce Store into incremental
   - **Property 6: Add to Cart Creates Cart Item** (integration test)
   - **Validates: Requirements 3.5**
 
-- [ ] 14. Implement Cart Page
-  - [ ] 14.1 Create Cart page with cart display
+- [x] 14. Implement Cart Page
+  - [x] 14.1 Create Cart page with cart display
     - Import useContext and CartContext in Cart.jsx
     - Get cart array and all cart functions from context
     - Conditionally render: empty cart message with link to home if cart is empty, or cart items if cart has items
