@@ -70,21 +70,21 @@ This implementation plan breaks down the React E-Commerce Store into incremental
     - **Property 5: Navigation on Product Click**
     - **Validates: Requirements 2.5, 6.4**
 
-- [ ] 8. Checkpoint - Verify Home Page Works
+- [x] 8. Checkpoint - Verify Home Page Works
   - Run the development server and verify products load and display correctly
   - Test clicking on product cards (should navigate even though details page is empty)
   - Test error handling by temporarily breaking the API URL
   - Ensure all tests pass, ask the user if questions arise
 
-- [ ] 9. Implement Product Details Page
-  - [ ] 9.1 Create ProductDetails page with dynamic routing
+- [x] 9. Implement Product Details Page
+  - [x] 9.1 Create ProductDetails page with dynamic routing
     - Use useParams hook to get product ID from URL
     - Add state for product object, loading boolean, and error string
     - Create useEffect that fetches single product from https://fakestoreapi.com/products/:id
     - Implement error handling and loading states (same pattern as Home page)
     - _Requirements: 3.1, 3.2, 3.7_
   
-  - [ ] 9.2 Display product details with full information
+  - [x] 9.2 Display product details with full information
     - Create two-column layout (image on left, details on right) that stacks on mobile
     - Display all product fields: image, title, description, price, category, rating
     - Add "Add to Cart" button (non-functional for now)
@@ -100,8 +100,8 @@ This implementation plan breaks down the React E-Commerce Store into incremental
     - **Property 15: Product Details API Call**
     - **Validates: Requirements 3.1**
 
-- [ ] 10. Create CartContext for Global State Management
-  - [ ] 10.1 Create CartContext with state and operations
+- [x] 10. Create CartContext for Global State Management
+  - [x] 10.1 Create CartContext with state and operations
     - Create `src/context/CartContext.jsx` file
     - Create CartContext using createContext
     - Create CartProvider component that wraps children
@@ -115,7 +115,7 @@ This implementation plan breaks down the React E-Commerce Store into incremental
     - Provide all state and functions through Context value
     - _Requirements: 4.1, 4.2, 4.4, 4.5, 4.6, 4.7, 4.8, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7_
   
-  - [ ] 10.2 Wrap App with CartProvider
+  - [x] 10.2 Wrap App with CartProvider
     - Import CartProvider in App.jsx
     - Wrap all routes with CartProvider so all components can access cart state
     - _Requirements: 7.1_
