@@ -1,15 +1,20 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { CartContext } from '../context/CartContext';
 import Loader from '../components/Loader/Loader';
 
 function ProductDetails() {
   // Get product ID from URL parameter
   const { id } = useParams();
   
+  // Get addToCart function from CartContext
+  const { addToCart } = useContext(CartContext);
+  
   // State management
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [added, setAdded] = useState(false); // For visual feedback
 
   // Fetch product when component mounts or ID changes
   useEffect(() => {
@@ -124,9 +129,17 @@ function ProductDetails() {
               </p>
             </div>
 
-            {/* Add to Cart Button (non-functional for now) */}
-            <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-              Add to Cart
+            {/* Add to Cart Button */}
+            <button 
+              onClick={() => {
+                addToCart(product);
+                setAdded(true);
+                // Reset "Added!" message after 2 seconds
+                setTimeout(() => setAdded(false), 2000);
+              }}
+              className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+            >
+              {added ? '✓ Added to Cart!' : 'Add to Cart'}
             </button>
           </div>
         </div>
